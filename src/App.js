@@ -1,13 +1,25 @@
-// import './App.css';
+import './App.css';
 import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar/>
-        <h1 className='text-3xl font-bold underline'>dgiuhdikghdsioufghdsig dsiufhgbviodu</h1>
-      </header>
+      <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/signin' element={<Signin/>}/>        
+        <Route path='/signup' element={<Signup/>}/>        
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

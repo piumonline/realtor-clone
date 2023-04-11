@@ -55,12 +55,15 @@ function Navbar() {
 
 
         <div>
-        <ul className='flex space-x-3 text-sm items-center'>
-              <li>Login</li>
-              <div className='rounded-full bg-red-700 px-3 py-1 text-white'>
-              <li >Sign up</li>
-              </div>
-            </ul>
+          <ul className='flex space-x-3 text-sm items-center'>
+            <Link to='/signin'>
+            <li>Login</li>
+            </Link>
+
+            <Link to='/signup'>
+                <li className='rounded-full bg-red-700 px-3 py-1 text-white'>Sign up</li>
+            </Link>
+          </ul>
         </div>
 
             

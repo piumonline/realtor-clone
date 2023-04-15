@@ -7,6 +7,7 @@ import { db, auth } from "../firebase";
 import { Toast, toast } from 'react-toastify';
 
 
+
 function Signup() {
 
   const[inputs, setInputs] = useState({

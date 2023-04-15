@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import FogotPassword from './pages/FogotPassword';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -17,8 +20,21 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/signin' element={<Signin/>}/>        
-        <Route path='/signup' element={<Signup/>}/>        
+        <Route path='/signup' element={<Signup/>}/> 
+        <Route path='/fogotpwd' element={<FogotPassword/>}/>        
       </Routes>
+      <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          />
       </BrowserRouter>
     </div>
   );

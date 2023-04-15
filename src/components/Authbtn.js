@@ -1,6 +1,5 @@
 import React from 'react'
 import { FcGoogle } from 'react-icons/fc'
-
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -39,7 +38,9 @@ function Authbtn() {
 
   return (
     
-        <button className='bg-red-500 py-2 text-white -3 flex justify-center items-center w-full' onClick={onGoogleClick}>
+        <button 
+        className='bg-red-500 py-2 text-white -3 flex justify-center items-center w-full' 
+        onClick={onGoogleClick}>
               <FcGoogle className='bg-white rounded-full m-1'/>
                 CONTINUE WITH GOOGLE
         </button>

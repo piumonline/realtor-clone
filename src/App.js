@@ -8,7 +8,7 @@ import Signup from './pages/Signup';
 import FogotPassword from './pages/FogotPassword';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import PrivateRoute from './components/PrivateRoute';
 
 
 function App() {
@@ -18,7 +18,9 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile' element={<PrivateRoute/>}>
+          <Route path='/profile' element={<Profile/>}/>          
+        </Route>
         <Route path='/signin' element={<Signin/>}/>        
         <Route path='/signup' element={<Signup/>}/> 
         <Route path='/fogotpwd' element={<FogotPassword/>}/>        

@@ -8,6 +8,7 @@ import { Toast, toast } from 'react-toastify';
 
 
 
+
 function Signup() {
 
   const[inputs, setInputs] = useState({

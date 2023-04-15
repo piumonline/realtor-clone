@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Authbtn from '../components/Authbtn';
+import { toast } from "react-toastify";
+import { sendPasswordResetEmail, getAuth } from "firebase/auth";
+
 
 function FogotPassword() {
 
@@ -10,7 +13,16 @@ function FogotPassword() {
     setEmail(e.target.value)
   }
 
-  // console.log(inputs);
+  async function onSubmit(e){
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Email was sent");
+    } catch (error) {
+      toast.error("Could not send reset password");
+    }
+  }
 
   return (
     <div>
@@ -21,7 +33,7 @@ function FogotPassword() {
         </div>
 
         <div className='mx-10 flex justify-center items-center w-80'>
-          <form className='flex flex-col  w-full items-center'>
+          <form className='flex flex-col  w-full items-center' onSubmit={onSubmit}>
             
             <input className='m-1 w-full h-10 my-3 border-2 border-indigo-300 p-2' type='text' placeholder='Email addresss' name='email' onChange={handleChange}/>       
              
